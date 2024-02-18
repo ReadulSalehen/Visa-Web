@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<IndVisaWeb.Models.Visa>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_VisaLayout.cshtml";
+}
+
+<h1>Index</h1>
+<a class="btn btn-primary" asp-controller="Visa" asp-action="Create">Add Visa</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>SL#</th>
+            <th>Country</th>
+            <th>Indian Mission/Office</th>
+            <th>Nationality/Region</th>
+            <th>Date of Birth</th>
+            <th>Email ID</th>
+            <th>Expected Date Of Arivel</th>
+            <th>Visa Type</th>
+            <th>Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Visa visa in Model)
+            {
+                <tr>
+                    <td>@visa.Id</td>
+                    <td>@visa.Country</td>
+                    <td>@visa.IndianMissionOffice</td>
+                    <td>@visa.Nationality</td>
+                    <td>@visa.DateofBirth</td>
+                    <td>@visa.Email</td>
+                    <td>@visa.ExpectedDateOfArivel</td>
+                    <td>@visa.VisaType</td>
+                    <td>@visa.Purpose</td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
